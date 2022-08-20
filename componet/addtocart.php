@@ -31,7 +31,7 @@
             }
             
             
-        header("location:../ShopAll.php");
+        header("location:../my-cart.php");
             
         }
 

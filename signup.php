@@ -29,7 +29,7 @@
 
         <form action="signup.php" method="post">
             <input type="text" placeholder="Name" name="name" required>
-            <input type="email" placeholder="xyz@gmail.com" name="email" required>
+            <input type="email" placeholder="Enter email" name="email" required>
             <input type="password" placeholder="password" name="pwd" maxlength="15" required>
 
             <input type="submit" value="SignUp" name="signsubmit">

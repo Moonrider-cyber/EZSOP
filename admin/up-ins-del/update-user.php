@@ -48,7 +48,7 @@ if(isset($_REQUEST["uid"])){
         <form action="update-user.php" method="get">
             <input type="text" placeholder="id" name="id" value="<?php echo $id ?>" readonly>
             <input type="text" placeholder="Name" name="name" value="<?php echo $name ?>" required>
-            <input type="email" placeholder="xyz@gmail.com" name="email" value="<?php echo $email ?>" required>
+            <input type="email" placeholder="Enter email" name="email" value="<?php echo $email ?>" required>
             <!-- <input type="password" placeholder="update password" name="pwd" maxlength="15" > -->
 
             <input type="submit" value="update user" name="updateuser">

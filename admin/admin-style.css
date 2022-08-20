@@ -210,6 +210,19 @@ a {
 }
 /*        add product           */
 
+.pro-desc{
+  height: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+p{
+  padding: 0;
+  margin: 0;
+}
+
 
 /*          dashbord           */
 .dashbord {
@@ -224,6 +237,8 @@ a {
   display: flex;
   color: white;
   box-shadow: black 1px 1px 10px;    
+  width: 35%;
+  margin: 10px 70px;
 }
 .dashbord .dash-card .dash-icons{
   padding: 20px 10px;

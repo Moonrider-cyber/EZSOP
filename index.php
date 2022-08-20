@@ -47,7 +47,7 @@
                     <span>BEST PRICE</span>
                     <h1>Incredible Prices on All Your Favorite Item</h1>
                     <p>Get more for less on selected brands</p>
-                    <a href="pages/ShopAll.php"><button>Shop Now</button></a>
+                    <a href="ShopAll.php"><button>Shop Now</button></a>
                 </div>
                 <div class="swiper myimgSwiper">
 
@@ -81,7 +81,7 @@
                         <p> Holiday Deals</p>
                         <h1> Up to 30% off</h1>
                         <p> Selected Smartphone Brands</p>
-                        <a href="pages/mobile.php"><button>Shop Now</button></a>
+                        <a href="searchresult.php?search=mobile"><button>Shop Now</button></a>
                     </div>
                     <div class="modal-img">
                         <img src="img/modal1.webp" alt="modal1 photo">
@@ -92,7 +92,7 @@
                         <p> Just In</p>
                         <h1> Take Your Sound Anywhere</h1>
                         <p>Top Headphone Brands</p>
-                        <a href="pages/headphone.php"><button>Shop Now</button></a>
+                        <a href="searchresult.php?search=headphone"><button>Shop Now</button></a>
                     </div>
                     <div class="modal-img">
                         <img src="img/modal2.webp" alt="modal2 photo">

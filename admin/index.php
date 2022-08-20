@@ -18,6 +18,10 @@ $totalitems = mysqli_num_rows($sq2exc);
 $sq3 = "SELECT * FROM `product-catagory`";
 $sq3exc = mysqli_query($con, $sq3);
 $totalcat = mysqli_num_rows($sq3exc);
+
+$sq4 = "SELECT * FROM `sub-catagory`";
+$sq4exc = mysqli_query($con, $sq4);
+$totalsubcat = mysqli_num_rows($sq4exc);
 ?>
 <html>
 
@@ -43,15 +47,15 @@ $totalcat = mysqli_num_rows($sq3exc);
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
                 <div>
-                    <a href="index.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Website</span> </a>
+                    <a href="index.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">EZSOP</span> </a>
                     <div class="nav_list">
                         <a href="index.php" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
                             <span class="nav_name">Dashboard</span> </a>
                         <a href="user.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a>
-                        <a href="products.php" class="nav_link"> <i class="fa-solid fa-layer-group"></i> <span class="nav_name">Products</span> </a>
+                        <a href="products.php" class="nav_link"> <i class="fa-solid fa-box-open"></i> <span class="nav_name">Products</span> </a>
                         <a href="category.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Catagory</span> </a>
-                        <a href="sub-category.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Sub-Category</span> </a>
-                        <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Reviews</span> </a>
+                        <a href="sub-category.php" class="nav_link"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>
+                        
                     </div>
                 </div> 
                 <a href="admin-componet/logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
@@ -60,10 +64,10 @@ $totalcat = mysqli_num_rows($sq3exc);
         </nav>
 
         <!--Container Main start-->
-        <div class="">
+        <div>
 
 
-            <div class="dashbord">
+            <div class="dashbord py-5">
                 <div class="dash-card">
                     <div class="dash-icons">
                         <i class="fa-solid fa-user"></i>
@@ -79,18 +83,23 @@ $totalcat = mysqli_num_rows($sq3exc);
                 </div>
                 <div class="dash-card">
                     <div class="dash-icons">
-                        <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-solid fa-box-open"></i>
                     </div>
                     <div class="dash-desc">
                         <ul>
-                            <li class="dash-label">Total Items</li>
+                            <li class="dash-label">Total Products</li>
                             <li class="dash-data"><?php echo $totalitems; ?></li>
                         </ul>
                     </div>
                 </div>
-                <div class="dash-card">
+                
+
+
+            </div>
+            <div class="dashbord">
+            <div class="dash-card">
                     <div class="dash-icons">
-                        <i class="fa-solid fa-cart-shopping"></i>
+                    <i class='bx bx-bookmark nav_icon'></i>
                     </div>
                     <div class="dash-desc">
                         <ul>
@@ -99,9 +108,18 @@ $totalcat = mysqli_num_rows($sq3exc);
                         </ul>
                     </div>
                 </div>
-
-
-            </div>
+                <div class="dash-card">
+                    <div class="dash-icons">
+                    <i class="fa-solid fa-tag"></i>
+                    </div>
+                    <div class="dash-desc">
+                        <ul>
+                            <li class="dash-label">Total Sub-Category</li>
+                            <li class="dash-data"><?php echo $totalsubcat; ?></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
 
 
         </div>

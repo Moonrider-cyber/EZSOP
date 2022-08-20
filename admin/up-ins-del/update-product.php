@@ -242,7 +242,7 @@ $desc = "";
                                 type = "number"
                                 maxlength = "2"
                                 oninput="convertper()"
-                                required
+                                
                             />
                         </div>
                     </td>

@@ -51,10 +51,20 @@
                     </a>
                     </div>
                     <?php
-            }else{
+            }
+            elseif(isset($_SESSION['id'])){
                 $getitemquery = "SELECT * FROM `mycart` where userid={$uid}";
                 $excgetitem = $con->query($getitemquery);
-                $items = mysqli_num_rows($excgetitem);      
+                $items = mysqli_num_rows($excgetitem);
+                if($items == 0){
+                    echo '<div class="no-item">
+                    <h1>No item added</h1>
+                    <a href="ShopAll.php">
+                        <button>Shop Now</button>
+                    </a>
+                    </div>';
+                }   else{
+                    
         ?>
         <div class="cart-section">
             <div class="cart-items">
@@ -105,7 +115,8 @@
                         </div> 
                     </div>
                     <?php
-                        }
+                        
+                    }
                     ?>
                     
                  
@@ -132,7 +143,7 @@
                 </div>
             </div>
         </div>
-        <?php } ?>
+        <?php } }?>
     </div>
 
     <script>
@@ -180,7 +191,7 @@
                 
                 sum = sum + (intallprice * intallqty);
 
-                totalprice.textContent ="₹" + (sum + 100);
+                totalprice.textContent ="₹" + (sum + 50);
             }
             
         displaysum.textContent = sum;
