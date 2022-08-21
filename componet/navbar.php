@@ -35,9 +35,9 @@
                                     <div class="navdropdown">
                                         <ul class="navdropdown-list">
                                             <li class="navdropdown-link">
-                                            <a href="componet/user.php">    
+                                            <a href="#">    
                                                 <i class="fa-solid fa-user"></i>
-                                                <span href="#">Profile</span>
+                                                <span>Profile</span>
                                             </a>
                                             </li>
                                             <li class="navdropdown-link">
@@ -103,9 +103,17 @@
 
                     <ul class="res-nav-links">
                         <li class="nav-link">
-                            <a href="#">
+                            <a href="my-cart.php">
                                 <img src="img/shopping-cart.png" alt="">
-                                <span class="nav-link-text">0</span>
+                                <?php 
+                                if(isset($_SESSION['id'])){
+                                    ?> 
+                                    <span class="nav-link-text"><?php echo $itemnum; ?></span> <?php
+                                }else{
+                                ?> <span class="nav-link-text">0</span>
+                                <?php }
+                                ?>
+                                
                             </a>
                         </li>
                         <li class="nav-link" id="nav-menu-bar">

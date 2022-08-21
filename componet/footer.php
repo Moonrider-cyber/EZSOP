@@ -19,14 +19,26 @@
                         <li><a href="index.php">Home</a></li>
                         <li><a href="#">Contact us</a></li>
                         <li><a href="#">About us</a></li>
-                        <li><a href="#">Service</a></li>
+                        <!-- <li><a href="#">Service</a></li> -->
                     </ul>
-                    <ul class="box">
+                    <!-- <ul class="box">
                         <li class="link_name">Services</li>
-                        <li><a href="#">Home Delevary</a></li>
-                        <li><a href=""> Fast Delevary</a></li>
-                        <li><a href=""> Best Product</a></li>
+                        <li><a href="#">Home delivery</a></li>
+                        <li><a href="#"> Fast delivery</a></li>
+                        <li><a href="#"> Best Product</a></li>
 
+                    </ul> -->
+                    <ul class="box">
+                        <li class="link_name">Category</li>
+                        <?php
+                            $getcatq = "SELECT * FROM `product-catagory` limit 5;";
+                            $excgetcat = $con->query($getcatq);
+                            while($catres = $excgetcat->fetch_assoc()){
+                                ?>
+                                <li><a href="products.php?category=<?php echo $catres['cid'] ?>"><?php echo $catres["cname"] ?></a></li>
+                                <?php
+                            }
+                        ?>
                     </ul>
                     <ul class="box">
                         <li class="link_name">Account</li>
@@ -35,7 +47,7 @@
 
                     </ul>
                     <ul class="box">
-                        <li class="link_name">Devaloper</li>
+                        <li class="link_name">Developer</li>
                         <li>Patel Jainex</li>
                         <li>Parmar Rohit</li>
                         <li>Makadiya Parth</li>
