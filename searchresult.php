@@ -3,7 +3,7 @@
 
 if(isset($_REQUEST['search'])){
     $searchstr = $_REQUEST['search'];
-    $searchq = "SELECT * FROM `products` WHERE `pname` LIKE '%{$searchstr}%' or `desc` LIKE '%{$searchstr}%'";
+    $searchq = "SELECT * FROM `products` WHERE status=0 and(`pname` LIKE '%{$searchstr}%' or `desc` LIKE '%{$searchstr}%')";
     $excser = $con->query($searchq);
     $snum = mysqli_num_rows($excser);
 }
@@ -12,7 +12,7 @@ if(isset($_REQUEST['search'])){
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

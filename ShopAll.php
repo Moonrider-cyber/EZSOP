@@ -1,7 +1,7 @@
 <?php include_once("componet/conn.php"); ?>
 <?php session_start();
     if(isset($_SESSION["login"])){
-        $name = $_SESSION["name"];
+        $name = $_SESSION["username"];
     }
 ?>
 
@@ -9,7 +9,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- links -->
@@ -63,7 +63,7 @@
                         <div class="cards-group">
 
                         <?php
-                            $getpq = "SELECT * FROM `products`;";
+                            $getpq = "SELECT * FROM `products` where status=0;";
                             $res = $con->query($getpq);
                             while($rows = mysqli_fetch_assoc($res)){
                                 ?>

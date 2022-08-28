@@ -1,7 +1,7 @@
 <?php include_once("componet/conn.php"); ?>
 <?php session_start();
     if(isset($_SESSION["login"])){
-        $name = $_SESSION["name"];
+        $name = $_SESSION["username"];
     }
 ?>
 <!DOCTYPE html>
@@ -161,12 +161,13 @@
                     <div class="cards-group">
 
                     <?php
-                        $fetchprodq = "select * from products limit 6";
+                        $fetchprodq = "select * from products where status = 0 order by pid desc limit 6 ";
                         $excfetchprodq = $con->query($fetchprodq);
                         while($rows = $excfetchprodq->fetch_assoc()){
+                            if($rows['status'] == 0) {
                             ?>
                             
-                            <div class="card">
+                            <div class="card"> 
                             <div class="card-fav">
                                 <button><i class="far fa-heart"></i></button>
                             </div> 
@@ -193,7 +194,8 @@
                             </div>
                         </div>
                             
-                        <?php }
+                        <?php } 
+                        }
                     ?>
                       
 

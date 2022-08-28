@@ -237,7 +237,7 @@ nav{
 }
 .sub-nav-dropbox{
   position:absolute;
-  z-index: 2;
+  z-index: 5;
   text-align: center;
   display: block;
   cursor: pointer;

@@ -13,7 +13,7 @@ if(isset($_REQUEST['category'])){
     $fdata = mysqli_fetch_assoc($catdata);
     $cname= $fdata["cname"];
 }
-if(isset($_REQUEST['subcategory'])){
+if(isset($_REQUEST['subcategory'])){ 
     $cid = $_REQUEST['subcategory'];
     $getcat = "SELECT * FROM `sub-catagory` where subid={$cid};";
     $catdata = $con->query($getcat);
@@ -82,11 +82,11 @@ if(isset($_REQUEST['subcategory'])){
 
                         <?php
                         if(isset($_REQUEST['category'])){
-                            $getpq = "SELECT * FROM `products` where cid={$cid};";
+                            $getpq = "SELECT * FROM `products` where cid={$cid} and status=0;";
                             $res = $con->query($getpq);
                         }
                         elseif (isset($_REQUEST["subcategory"])) {
-                            $getpq = "SELECT * FROM `products` where subid={$cid};";
+                            $getpq = "SELECT * FROM `products` where subid={$cid} and status=0;";
                             $res = $con->query($getpq); 
                         }
 

@@ -52,12 +52,14 @@
         
         if(mysqli_num_rows($exc) == 1){
             $data = mysqli_fetch_assoc($exc);
-            if(password_verify($pwd,$data["password"])){
-                session_start();
-                $_SESSION["login"] = true;
-                $_SESSION["name"] = $data["name"];
-                $_SESSION["id"] = $data["id"];
-                header("location:index.php"); 
+            if($data['status'] == 0){
+                if(password_verify($pwd,$data["password"])){
+                    session_start();
+                    $_SESSION["login"] = true;
+                    $_SESSION["username"] = $data["name"];
+                    $_SESSION["id"] = $data["id"];
+                    header("location:index.php"); 
+                }
             }
         }
     }
