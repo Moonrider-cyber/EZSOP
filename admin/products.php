@@ -63,6 +63,7 @@ if (!isset($_SESSION["adminlogin"])) {
                         <th>CATEGORY ID</th>
                         <th>SUB-CATEGORY ID</th>
                         <th>PRICE</th>
+                        <th>Disable/Enable</th>
                         <th>Update</th>
                         <th>Delete</th>
                         </tr>
@@ -84,9 +85,18 @@ if (!isset($_SESSION["adminlogin"])) {
                             <td><?php echo $rec['cid']; ?></td>
                             <td><?php echo $rec['subid']; ?></td>
                             <td><?php echo $rec['price']; ?></td>
+                            <td>
+                                <a href="up-ins-del/dis-enb.php?pid=<?php echo $rec['pid'] ?>">
+                                <button type="submit" class="btn btn-<?php if($rec['status'] == 1){ echo 'danger'; }else{ echo 'primary'; } ?> disbtn" name="disbtn">
+                                    <?php if($rec['status'] == 1){ echo 'Enable'; }else{ echo 'Disable'; } ?>    
+                                </button>
+                                </a>
+                            </td>
                             <td class="item-icons"><a href="up-ins-del/update-product.php?upid=<?php echo $rec["pid"] ?>">
                             <i class="fa-solid fa-pen-to-square" data-toggle="tooltip" data-placement="top" title="UPDATE"></i>
                             </a></td>
+                            
+
                             <td class="item-icons"><a href="up-ins-del/productdelete.php?pid=<?php echo $rec['pid']; ?> ">
                             <i class="fa-regular fa-trash-can" data-toggle="tooltip" data-placement="top" title="DELETE"></i>
                             </a></td>

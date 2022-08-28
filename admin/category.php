@@ -62,7 +62,7 @@ $totalitems = mysqli_num_rows($sq2exc);
 
 <body>
 
-    <body id="body-pd">
+    <body id="body-pd"> 
     <nav>    
     <header class="header" id="header">
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
@@ -101,6 +101,7 @@ $totalitems = mysqli_num_rows($sq2exc);
                         <th>NAME</th>
                         <th>SLUG</th>
                         <th>Update</th>
+                        <th>Disable/Enable</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -120,9 +121,18 @@ $totalitems = mysqli_num_rows($sq2exc);
                             <td><a href="up-ins-del/update-cat.php?cid=<?php echo $rec['cid']; ?>">
                                 <i class="fa-solid fa-pen-to-square" data-toggle="tooltip" data-placement="top" title="UPDATE"></i></a>
                             </td>
+                            <td>
+                                <a href="up-ins-del/dis-enb.php?cid=<?php echo $rec['cid'] ?>">
+                                <button type="submit" class="btn btn-<?php if($rec['status'] == 1){ echo 'danger'; }else{ echo 'primary'; } ?> disbtn" name="disbtn">
+                                    <?php if($rec['status'] == 1){ echo 'Enable'; }else{ echo 'Disable'; } ?>    
+                                </button>
+                                </a>
+                            </td>
+
                             <td><a href="up-ins-del/catdelete.php?cid=<?php echo $rec['cid']; ?>">
                 <i class="fa-regular fa-trash-can" data-toggle="tooltip" data-placement="top" title="DELETE"></i></a>
                             </td>
+                            
                         </tr>
                     <?php
                     } ?>

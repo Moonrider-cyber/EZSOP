@@ -76,7 +76,7 @@
         <!--Container Main start-->
        
 
-
+        
         <div class=" py-5 container">
         <div class="add-product d-flex justify-content-end px-5">
             <a href="up-ins-del/add-user.php">
@@ -92,6 +92,7 @@
                         <th>EMAIL</th>
                         <!-- <th>Update</th> -->
                         <th>Delete</th>
+                        <th>Disable/Enable</th>
                     </tr>
                 </thead>
                 <tbody class="t_body">
@@ -111,8 +112,14 @@
                             </td> -->
                             <td>
                                 <a href="up-ins-del/userdelete.php?uid=<?php echo $rec['id']; ?>">
-                                <i class="fa-regular fa-trash-can"></i></a>
-                                
+                                <i class="fa-regular fa-trash-can"></i></a>   
+                            </td>
+                            <td>
+                                <a href="up-ins-del/dis-enb.php?uid=<?php echo $rec['id'] ?>">
+                                <button type="submit" class="btn btn-<?php if($rec['status'] == 1){ echo 'danger'; }else{ echo 'primary'; } ?> disbtn" name="disbtn">
+                                    <?php if($rec['status'] == 1){ echo 'Enable'; }else{ echo 'Disable'; } ?>    
+                                </button>
+                                </a>
                             </td>
 
                         </tr>
@@ -121,6 +128,7 @@
                 </tbody>
             </table>
         </div>
+        
         <!--Container Main end-->
 
         <script>
@@ -166,6 +174,7 @@
     </body>
 
 </html>
+
 
 
 <?php $con->close(); ?>
