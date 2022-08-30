@@ -50,6 +50,7 @@ if (!isset($_SESSION["adminlogin"]) || $_SESSION["adminlogin"] == "adlogout") {
             color: blue;
         }
     </style>
+    <title>Admin - User</title>
 </head>
 
 <body>
@@ -59,7 +60,7 @@ if (!isset($_SESSION["adminlogin"]) || $_SESSION["adminlogin"] == "adlogout") {
             <header class="header" id="header">
                 <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
                 <div class="header-title">
-                    <h3>User</h3>
+                    <h3>Admin</h3>
                 </div>
                 <div>Welcome <?php echo $_SESSION["name"] ?></div>
             </header>
@@ -86,8 +87,8 @@ if (!isset($_SESSION["adminlogin"]) || $_SESSION["adminlogin"] == "adlogout") {
         <!-- <div class="container"> -->
             <div class="user-subnav">
                 <div class="navlinks">
-                    <a href="user.php" class="active">User</a>
-                    <a href="admin.php">Admin</a>
+                    <a href="user.php" >User</a>
+                    <a href="admin.php" class="active">Admin</a>
                 </div>
             </div>
         <!-- </div>         -->
@@ -106,45 +107,45 @@ if (!isset($_SESSION["adminlogin"]) || $_SESSION["adminlogin"] == "adlogout") {
                         <th>NAME</th>
                         <th>EMAIL</th>
                         <!-- <th>Update</th> -->
-                        <th>Delete</th>
-                        <th>Disable/Enable</th>
+                        <!-- <th>Delete</th> -->
+                        <!-- <th>Disable/Enable</th> -->
                     </tr>
                 </thead>
                 <tbody class="t_body">
 
                     <?php
-                    $select = "SELECT * FROM users";
+                    $select = "SELECT * FROM admins";
 
                     $q1 = mysqli_query($con, $select);
                     while ($rec = mysqli_fetch_array($q1)) {
                     ?>
                         <tr>
-                            <td><?php echo $rec['id']; ?></td>
+                            <td><?php echo $rec['aid']; ?></td>
                             <td><?php echo $rec['name']; ?></td>
                             <td><?php echo $rec['email']; ?></td>
                             <!-- <td><a href="up-ins-del/update-user.php?uid=<?php //echo $rec['id']; 
                                                                                 ?>">
                             <i class="fa-solid fa-pen-to-square"></i></a>
                             </td> -->
-                            <td>
-                                <a onclick="return checkdel()" href="up-ins-del/userdelete.php?uid=<?php echo $rec['id']; ?>">
+                            <!-- <td>
+                                <a onclick="return checkdel()" href="up-ins-del/userdelete.php?uid=<?php echo $rec['aid']; ?>">
                                     <i class="fa-regular fa-trash-can"></i></a>
-                            </td>
-                            <td>
-                                <a href="up-ins-del/dis-enb.php?uid=<?php echo $rec['id'] ?>">
-                                    <button type="submit" class="btn btn-<?php if ($rec['status'] == 1) {
-                                                                                echo 'danger';
-                                                                            } else {
-                                                                                echo 'primary';
-                                                                            } ?> disbtn" name="disbtn">
-                                        <?php if ($rec['status'] == 1) {
-                                            echo 'Enable';
-                                        } else {
-                                            echo 'Disable';
-                                        } ?>
+                            </td> -->
+                            <!-- <td>
+                                <a href="up-ins-del/dis-enb.php?uid=<?php //echo $rec['aid'] ?>">
+                                    <button type="submit" class="btn btn-<?php //if ($rec['status'] == 1) {
+                                                                                //echo 'danger';
+                                                                            //} else {
+                                                                                //echo 'primary';
+                                                                            //} ?> disbtn" name="disbtn">
+                                        <?php //if ($rec['status'] == 1) {
+                                            //echo 'Enable';
+                                        //} else {
+                                        //    echo 'Disable';
+                                        //} ?>
                                     </button>
                                 </a>
-                            </td>
+                            </td> -->
 
                         </tr>
                     <?php
@@ -195,7 +196,7 @@ if (!isset($_SESSION["adminlogin"]) || $_SESSION["adminlogin"] == "adlogout") {
             });
 
             function checkdel() {
-                if (confirm('Are you sure you want to delete user?')) {
+                if (confirm('Are you sure you want to delete admin?')) {
                     return true
                 } else {
                     return false

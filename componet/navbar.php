@@ -1,6 +1,6 @@
 <?php
     if(isset($_SESSION["login"])){
-        $name = $_SESSION["name"];
+        $name = $_SESSION["username"];
     }
 ?>
 
@@ -192,13 +192,13 @@
                             </a>
                         </li>
                         <?php 
-                            $scq="SELECT * FROM `product-catagory`";
+                            $scq="SELECT * FROM `product-catagory` where status=0";
                             $excscq = $con ->query($scq);
 
                             while($row = mysqli_fetch_array($excscq)){
 
                                 if($row["issubset"] == 1){ 
-                                    $subcq="SELECT * FROM `sub-catagory` where cid={$row['cid']}";
+                                    $subcq="SELECT * FROM `sub-catagory` where cid={$row['cid']} and status=0";
                                     $excsubcat = $con ->query($subcq);
                                         
 

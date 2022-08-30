@@ -17,6 +17,12 @@ if (isset($_REQUEST["addsubmit"])) {
     $file_error = $img["error"];
     
     if($file_error == 0){
+        //check s=category select
+        if($cat == 0){
+            $errormsg = "Select Catrgory.";
+            $chacking = false;
+
+        }else{
         $destfile='admin/product-photos/'. $file_name;
         //check file size
         if ($_FILES["photo"]["size"] > 500000) {
@@ -34,11 +40,12 @@ if (isset($_REQUEST["addsubmit"])) {
                 
                 header("location:../products.php");
             }
+        
         }else{
             $chacking= false;
             $errormsg = "Sorry, only JPG, JPEG, PNG files are allowed.";
         }
-          
+    } 
         }
     }
 
@@ -118,10 +125,12 @@ if (isset($_REQUEST["addsubmit"])) {
                     </td>
                     <td>
                         
-                        <select class="form-select" name="cat" id="cat-select" onchange="changecat()">
+                        <select class="form-select" name="cat" id="cat-select" onchange="changecat()" require>
+                            <option value="0">Select Category</option>
                         <?php
                             $sq = "SELECT * FROM `product-catagory`";
                             $result = mysqli_query($con,$sq);
+                            
                             while($row = mysqli_fetch_assoc($result)){
                                 ?>
                                 <option value="<?php echo $row['cid']; ?>" ><?php echo $row['cname']; ?></option>

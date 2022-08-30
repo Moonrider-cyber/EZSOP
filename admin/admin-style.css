@@ -197,7 +197,7 @@ a {
     margin-top: 40px;
 }
 .main-container .manage-product thead th{
-    padding: 10px 30px;
+    padding: 7px 13px;
     border-bottom: .1px solid rgb(217, 220, 219);
 }
 .main-container .manage-product tbody td{
@@ -269,6 +269,33 @@ p{
 
 
 
+.user-subnav{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* background-color: rgb(198, 252, 252); */
+  /* padding: 20px 30px; */
+  padding-top: 40px;
 
+}
+.user-subnav .navlinks{
+  border: 1px #4723d9 inset;
+  border-radius: 10px;
+}
+.user-subnav a{
+  font-size: 23px;
+  color: black;
+  /* margin: 0 20px; */
+  padding: 3px 28px;
+  border-radius: 10px;
+  font-family: var(--body-font);
+  font-weight: 600;
+  
+}
+
+.user-subnav .active{
+  background-color: #4723d9;
+  color: white;
+}
 
 

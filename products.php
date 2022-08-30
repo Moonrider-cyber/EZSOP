@@ -1,7 +1,7 @@
 <?php include_once("componet/conn.php"); ?>
 <?php session_start();
     if(isset($_SESSION["login"])){
-        $name = $_SESSION["name"];
+        $name = $_SESSION["username"];
     }
 ?>
 <?php

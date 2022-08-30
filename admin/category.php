@@ -100,8 +100,8 @@ $totalitems = mysqli_num_rows($sq2exc);
                         <th>ID</th>
                         <th>NAME</th>
                         <th>SLUG</th>
-                        <th>Update</th>
                         <th>Disable/Enable</th>
+                        <th>Update</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -117,19 +117,19 @@ $totalitems = mysqli_num_rows($sq2exc);
                             <td><?php echo $rec['cid']; ?></td>
                             <td><?php echo $rec['cname']; ?></td>
                             <td><?php echo $rec['slug']; ?></td>
-                            
-                            <td><a href="up-ins-del/update-cat.php?cid=<?php echo $rec['cid']; ?>">
-                                <i class="fa-solid fa-pen-to-square" data-toggle="tooltip" data-placement="top" title="UPDATE"></i></a>
-                            </td>
                             <td>
                                 <a href="up-ins-del/dis-enb.php?cid=<?php echo $rec['cid'] ?>">
                                 <button type="submit" class="btn btn-<?php if($rec['status'] == 1){ echo 'danger'; }else{ echo 'primary'; } ?> disbtn" name="disbtn">
                                     <?php if($rec['status'] == 1){ echo 'Enable'; }else{ echo 'Disable'; } ?>    
                                 </button>
                                 </a>
+                            </td>   
+                            <td><a href="up-ins-del/update-cat.php?cid=<?php echo $rec['cid']; ?>">
+                                <i class="fa-solid fa-pen-to-square" data-toggle="tooltip" data-placement="top" title="UPDATE"></i></a>
                             </td>
+                            
 
-                            <td><a href="up-ins-del/catdelete.php?cid=<?php echo $rec['cid']; ?>">
+                            <td><a  onclick="return checkdel()" href="up-ins-del/catdelete.php?cid=<?php echo $rec['cid']; ?>">
                 <i class="fa-regular fa-trash-can" data-toggle="tooltip" data-placement="top" title="DELETE"></i></a>
                             </td>
                             
@@ -179,6 +179,15 @@ $totalitems = mysqli_num_rows($sq2exc);
                 linkColor.forEach(l => l.addEventListener('click', colorLink))
 
             });
+
+            function checkdel(name) {
+                if (confirm('Are you sure you want to delete this category?')) {
+                    return true
+                } else {
+                    return false
+                }
+
+            }
         </script>
     </body>
 

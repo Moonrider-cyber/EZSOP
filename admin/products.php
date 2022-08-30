@@ -97,7 +97,7 @@ if (!isset($_SESSION["adminlogin"])) {
                             </a></td>
                             
 
-                            <td class="item-icons"><a href="up-ins-del/productdelete.php?pid=<?php echo $rec['pid']; ?> ">
+                            <td class="item-icons"><a onclick="return checkdel()" href="up-ins-del/productdelete.php?pid=<?php echo $rec['pid']; ?> ">
                             <i class="fa-regular fa-trash-can" data-toggle="tooltip" data-placement="top" title="DELETE"></i>
                             </a></td>
                         </tr>
@@ -148,6 +148,16 @@ if (!isset($_SESSION["adminlogin"])) {
                 linkColor.forEach(l => l.addEventListener('click', colorLink))
 
             });
+
+
+            function checkdel() {
+                if (confirm('Are you sure you want to delete this product?')) {
+                    return true
+                } else {
+                    return false
+                }
+
+            }
         </script>
     </body>
 

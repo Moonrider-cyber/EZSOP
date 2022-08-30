@@ -91,6 +91,7 @@ if (!isset($_SESSION["adminlogin"])) {
                         <th>ID</th>
                         <th>NAME</th>
                         <th>CID</th>
+                        <th>Disable/Enable</th>
                         <th>Update</th>
                         <th>Delete</th>
                     </tr>
@@ -108,10 +109,19 @@ if (!isset($_SESSION["adminlogin"])) {
                             <td><?php echo $rec['subname']; ?></td>
                             <td><?php echo $rec['cid']; ?></td>
                             
+                            <td>
+                                <a href="up-ins-del/dis-enb.php?subid=<?php echo $rec['subid'] ?>">
+                                    <button type="submit" class="btn btn-<?php if ($rec['status'] == 1) {
+                                        echo 'danger';} else { echo 'primary'; } ?> disbtn" name="disbtn">
+                                        <?php if ($rec['status'] == 1) { echo 'Enable'; } else { echo 'Disable'; } ?>
+                                    </button>
+                                </a>
+                            </td>
+
                             <td><a href="up-ins-del/update-subcat.php?subcatid=<?php echo $rec['subid']; ?>">
                                 <i class="fa-solid fa-pen-to-square" data-toggle="tooltip" data-placement="top" title="UPDATE"></i></a>
                             </td>
-                            <td><a href="up-ins-del/subcatdelete.php?subcatid=<?php echo $rec['subid']; ?>">
+                            <td><a  onclick="return checkdel()" href="up-ins-del/subcatdelete.php?subcatid=<?php echo $rec['subid']; ?>">
                 <i class="fa-regular fa-trash-can" data-toggle="tooltip" data-placement="top" title="DELETE"></i></a>
                             </td>
                         </tr>
@@ -160,6 +170,15 @@ if (!isset($_SESSION["adminlogin"])) {
                 linkColor.forEach(l => l.addEventListener('click', colorLink))
 
             });
+
+            function checkdel() {
+                if (confirm('Are you sure you want to delete this sub-category?')) {
+                    return true
+                } else {
+                    return false
+                }
+
+            }
         </script>
     </body>
 
