@@ -141,6 +141,13 @@
                         <p class="total-price">₹0</p>
                     </div>
                 </div>
+               
+                <div class="cart-buy">
+                    <a href="checkout.php">
+                        <input type="submit" value="Proceed to checkout" name="checkout"/>
+                    </a>
+                </div>
+               
             </div>
         </div>
         <?php } }?>
@@ -165,7 +172,7 @@
                 nums.textContent = intnum + 1;
 
                 gettotalprice();
-            });
+            }); 
 
             minsdiv[i].addEventListener("click", ()=> {
                 getnum = nums.textContent;

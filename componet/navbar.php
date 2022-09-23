@@ -35,9 +35,10 @@
                                     <div class="navdropdown">
                                         <ul class="navdropdown-list">
                                             <li class="navdropdown-link">
-                                            <a href="#">    
-                                                <i class="fa-solid fa-user"></i>
-                                                <span>Profile</span>
+                                            <a href="myorders.php">    
+                                            <i class="fa-solid fa-boxes-stacked"></i>
+                                                <!-- <i class="fa-solid fa-user"></i> -->
+                                                <span>My orders</span>
                                             </a>
                                             </li>
                                             <li class="navdropdown-link">
@@ -149,8 +150,9 @@
                                     <div class="navdropdown">
                                         <ul class="navdropdown-list">
                                             <li class="navdropdown-link">
-                                                <i class="fa-solid fa-user"></i>
-                                                <a href="#">Profile</a>
+                                                <!-- <i class="fa-solid fa-user"></i> -->
+                                                <i class="fa-solid fa-boxes-stacked"></i>
+                                                <a href="myorders.php">My orders</a>
                                             </li>
                                             <li class="navdropdown-link">
                                                 <a href="componet/userlogout.php">

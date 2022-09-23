@@ -14,7 +14,7 @@
                         <a href="user.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a>
                         <a href="products.php" class="nav_link"> <i class="fa-solid fa-box-open"></i> <span class="nav_name">Products</span> </a>
                         <a href="category.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Catagory</span> </a>
-                        <a href="sub-category.php" class="nav_link"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>
+                        <a href="sub-category.php" class="nav_link"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>  <a href="orders.php" class="nav_link"> <i class="fa-solid fa-boxes-stacked"></i> <span class="nav_name">Orders</span> </a>
                         <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Reviews</span> </a>
                     </div>
                 </div> 

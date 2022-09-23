@@ -35,7 +35,7 @@ if (!isset($_SESSION["adminlogin"])) {
                         <a href="user.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a>
                         <a href="products.php" class="nav_link active"> <i class="fa-solid fa-box-open"></i> <span class="nav_name">Products</span> </a>
                         <a href="category.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Catagory</span> </a>
-                        <a href="sub-category.php" class="nav_link"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>
+                        <a href="sub-category.php" class="nav_link"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>  <a href="orders.php" class="nav_link"> <i class="fa-solid fa-boxes-stacked"></i> <span class="nav_name">Orders</span> </a>
                         
                     </div>
                 </div> 
@@ -65,7 +65,7 @@ if (!isset($_SESSION["adminlogin"])) {
                         <th>PRICE</th>
                         <th>Disable/Enable</th>
                         <th>Update</th>
-                        <th>Delete</th>
+                        <!-- <th>Delete</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -97,9 +97,9 @@ if (!isset($_SESSION["adminlogin"])) {
                             </a></td>
                             
 
-                            <td class="item-icons"><a onclick="return checkdel()" href="up-ins-del/productdelete.php?pid=<?php echo $rec['pid']; ?> ">
+                            <!-- <td class="item-icons"><a onclick="return checkdel()" href="up-ins-del/productdelete.php?pid=<?php //echo $rec['pid']; ?> ">
                             <i class="fa-regular fa-trash-can" data-toggle="tooltip" data-placement="top" title="DELETE"></i>
-                            </a></td>
+                            </a></td> -->
                         </tr>
                     <?php
                     } ?>

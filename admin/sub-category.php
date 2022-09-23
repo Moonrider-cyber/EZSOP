@@ -70,7 +70,7 @@ if (!isset($_SESSION["adminlogin"])) {
                         <a href="user.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a>
                         <a href="products.php" class="nav_link"> <i class="fa-solid fa-box-open"></i> <span class="nav_name">Products</span> </a>
                         <a href="category.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Catagory</span> </a>
-                        <a href="sub-category.php" class="nav_link active"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>
+                        <a href="sub-category.php" class="nav_link active"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>  <a href="orders.php" class="nav_link"> <i class="fa-solid fa-boxes-stacked"></i> <span class="nav_name">Orders</span> </a>
                         
                     </div>
                 </div> 
@@ -93,7 +93,7 @@ if (!isset($_SESSION["adminlogin"])) {
                         <th>CID</th>
                         <th>Disable/Enable</th>
                         <th>Update</th>
-                        <th>Delete</th>
+                        <!-- <th>Delete</th> -->
                     </tr>
                 </thead>
                 <tbody class="t_body">
@@ -121,9 +121,9 @@ if (!isset($_SESSION["adminlogin"])) {
                             <td><a href="up-ins-del/update-subcat.php?subcatid=<?php echo $rec['subid']; ?>">
                                 <i class="fa-solid fa-pen-to-square" data-toggle="tooltip" data-placement="top" title="UPDATE"></i></a>
                             </td>
-                            <td><a  onclick="return checkdel()" href="up-ins-del/subcatdelete.php?subcatid=<?php echo $rec['subid']; ?>">
+                            <!-- <td><a  onclick="return checkdel()" href="up-ins-del/subcatdelete.php?subcatid=<?php //echo $rec['subid']; ?>">
                 <i class="fa-regular fa-trash-can" data-toggle="tooltip" data-placement="top" title="DELETE"></i></a>
-                            </td>
+                            </td> -->
                         </tr>
                     <?php
                     } ?>

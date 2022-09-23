@@ -88,7 +88,7 @@ if (isset($_REQUEST["addsub-category"])) {
             <tr>
                     <td>
                         <div>
-                            <label for="productname" class="form-label my-1">Catagory name</label>
+                            <label for="productname" class="form-label my-1">CATAGORY NAME</label>
                         </div>
                     </td>
                     <td>
@@ -113,13 +113,13 @@ if (isset($_REQUEST["addsub-category"])) {
             <tr>
                     <td>
                         <div>
-                            <label for="productname" class="form-label my-1">CATAGORY NAME</label>
+                            <label for="productname" class="form-label my-1">SUB-CATAGORY NAME</label>
                         </div>
                     </td>
                     <td>
                         <div class="form-floating">
                             <input type="text" class="form-control" placeholder="Enter sub-category Name" name="sname" required>
-                            <label for="floatingPassword">sub-category Name</label>
+                            <label for="floatingPassword">sub-category</label>
                         </div>
                     </td>
                 </tr>

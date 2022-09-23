@@ -69,5 +69,16 @@
         }
         header("location:../sub-category.php");
     }
+    if(isset($_REQUEST["oid"])){
+        $oid = $_REQUEST["oid"];
+        // $getorder = "select * from orders where oid={$oid}";
+        // $excgetorder = $con->query($getorder);
+
+        // $order = $excgetorder->fetch_assoc();
+
+        $updatevalue = "update orders set status=1 where oid={$oid}";
+        $excupdatevalue = $con->query($updatevalue);
+        header("location:../orders.php");
+    }
     // header("location:../index.php");
 ?>

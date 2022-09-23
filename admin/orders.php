@@ -5,16 +5,7 @@ if (!isset($_SESSION["adminlogin"])) {
     header("location:admin-login.php");
 }
 ?>
-<?php
-$sq1 = "SELECT * FROM users";
-$sq1exc = mysqli_query($con, $sq1);
-$totaluser = mysqli_num_rows($sq1exc);
 
-
-$sq2 = "SELECT * FROM products";
-$sq2exc = mysqli_query($con, $sq2);
-$totalitems = mysqli_num_rows($sq2exc);
-?>
 <html>
 
 <head>
@@ -62,24 +53,25 @@ $totalitems = mysqli_num_rows($sq2exc);
 
 <body>
 
-    <body id="body-pd"> 
+    <body id="body-pd">
     <nav>    
     <header class="header" id="header">
             <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-            <div class="header-title"><h3>Category</h3></div>
+            <div class="header-title"><h3>Orders</h3></div>
             <div>Welcome <?php echo $_SESSION["name"] ?></div>
         </header>
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div>
+                <div> 
                     <a href="index.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">EZSOP</span> </a>
                     <div class="nav_list">
                         <a href="index.php" class="nav_link "> <i class='bx bx-grid-alt nav_icon'></i>
                             <span class="nav_name">Dashboard</span> </a>
                         <a href="user.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a>
                         <a href="products.php" class="nav_link"> <i class="fa-solid fa-box-open"></i> <span class="nav_name">Products</span> </a>
-                        <a href="category.php" class="nav_link active"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Catagory</span> </a>
-                        <a href="sub-category.php" class="nav_link"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>  <a href="orders.php" class="nav_link"> <i class="fa-solid fa-boxes-stacked"></i> <span class="nav_name">Orders</span> </a>
+                        <a href="category.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Catagory</span> </a>
+                        <a href="sub-category.php" class="nav_link "> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a> 
+                         <a href="orders.php" class="nav_link active"> <i class="fa-solid fa-boxes-stacked"></i> <span class="nav_name">Orders</span> </a>
                         
                     </div>
                 </div> 
@@ -87,58 +79,77 @@ $totalitems = mysqli_num_rows($sq2exc);
             </nav>
         </div>
         </nav>
+     
         <!--Container Main start-->
-        <div class="py-5  container">
-        <div class="add-product d-flex justify-content-end px-5">
-            <a href="up-ins-del/add-category.php">
-                       <button type="button" class="btn btn-warning">ADD CATEGORY</button>
-                   </a>
+
+
+        <div class=" py-5 container">
+
+        <div class="user-subnav">
+                <div class="navlinks">
+                    <a href="orders.php" class="active">Pending orders</a>
+                    <a href="complet-orders.php">Complete orders</a>
+                </div>
             </div>
-        <table align="center">
+
+            <table align="center">
                 <thead class="t_hading">
                     <tr>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>SLUG</th>
-                        <th>Disable/Enable</th>
-                        <th>Update</th>
-                        <!-- <th>Delete</th> -->
+                        <th>OID</th>
+                        <th>User Id</th>
+                        <th>Address</th>
+                        <th>product</th>
+                        <th>date</th>
+                        <th>status</th>
+                        <th>delivered</th>
+                        
                     </tr>
                 </thead>
                 <tbody class="t_body">
-                    
+
                     <?php
-                    $select = "SELECT * FROM `product-catagory`;";
+                    $select = "SELECT * FROM orders where status=0";
 
                     $q1 = mysqli_query($con, $select);
-                    while ($rec = mysqli_fetch_array($q1)) {
+                    while ($rec = mysqli_fetch_assoc($q1)) {
                     ?>
                         <tr>
-                            <td><?php echo $rec['cid']; ?></td>
-                            <td><?php echo $rec['cname']; ?></td>
-                            <td><?php echo $rec['slug']; ?></td>
-                            <td>
-                                <a href="up-ins-del/dis-enb.php?cid=<?php echo $rec['cid'] ?>">
-                                <button type="submit" class="btn btn-<?php if($rec['status'] == 1){ echo 'danger'; }else{ echo 'primary'; } ?> disbtn" name="disbtn">
-                                    <?php if($rec['status'] == 1){ echo 'Enable'; }else{ echo 'Disable'; } ?>    
-                                </button>
-                                </a>
-                            </td>   
-                            <td><a href="up-ins-del/update-cat.php?cid=<?php echo $rec['cid']; ?>">
-                                <i class="fa-solid fa-pen-to-square" data-toggle="tooltip" data-placement="top" title="UPDATE"></i></a>
-                            </td>
+                            <td><?php echo $rec['oid']; ?></td>
                             
+                            <?php
+                                $finduser = "SELECT * FROM `users` where id={$rec['uid']}";
+                                $excfinduser = $con->query($finduser);
+                                $user = mysqli_fetch_assoc($excfinduser);
+                            ?>
+                            <td><?php echo $user["name"]; ?></td>
 
-                            <!-- <td><a  onclick="return checkdel()" href="up-ins-del/catdelete.php?cid=<?php //echo $rec['cid']; ?>">
-                <i class="fa-regular fa-trash-can" data-toggle="tooltip" data-placement="top" title="DELETE"></i></a>
-                            </td> -->
+                            <?php
+                                $findaddress = "SELECT * FROM `user-address` where adrid={$rec['adrid']}";
+                                $excfindaddress = $con->query($findaddress);
+                                $address = mysqli_fetch_assoc($excfindaddress);
+                            ?>
+                            <td><?php echo $address['address']; ?></td>
+                            <?php
+                            $findprod = "SELECT * FROM `products` where pid={$rec['pid']}";
+                            $excfindprod = $con->query($findprod);
+                            $prod = mysqli_fetch_assoc($excfindprod);
+                            ?>
+                            <td><?php echo $prod['pname']; ?></td>
+                            <td><?php echo $rec['date']; ?></td>
                             
+                            <td><?php if($rec["status"] == 1){ echo "deliverd"; }else{ echo "pending"; } ?></td>
+                            <td>
+                                <a disabled onclick="return checkclick()" href="up-ins-del/dis-enb.php?oid=<?php echo $rec['oid'] ?>">
+                                    <button class="btn btn-primary">delivered</button></td>
+                                </a>
+
                         </tr>
                     <?php
                     } ?>
                 </tbody>
             </table>
         </div>
+
         <!--Container Main end-->
 
         <script>
@@ -180,14 +191,14 @@ $totalitems = mysqli_num_rows($sq2exc);
 
             });
 
-            function checkdel(name) {
-                if (confirm('Are you sure you want to delete this category?')) {
+            function checkclick(){
+                if (confirm('Is this product deliverd?')) {
                     return true
                 } else {
                     return false
                 }
-
             }
+
         </script>
     </body>
 

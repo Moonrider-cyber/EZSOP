@@ -73,7 +73,7 @@ if (!isset($_SESSION["adminlogin"]) || $_SESSION["adminlogin"] == "adlogout") {
                             <a href="user.php" class="nav_link active"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a>
                             <a href="products.php" class="nav_link"> <i class="fa-solid fa-box-open"></i> <span class="nav_name">Products</span> </a>
                             <a href="category.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Catagory</span> </a>
-                            <a href="sub-category.php" class="nav_link"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>
+                            <a href="sub-category.php" class="nav_link"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>  <a href="orders.php" class="nav_link"> <i class="fa-solid fa-boxes-stacked"></i> <span class="nav_name">Orders</span> </a>
 
                         </div>
                     </div>
@@ -106,7 +106,7 @@ if (!isset($_SESSION["adminlogin"]) || $_SESSION["adminlogin"] == "adlogout") {
                         <th>NAME</th>
                         <th>EMAIL</th>
                         <!-- <th>Update</th> -->
-                        <th>Delete</th>
+                        <!-- <th>Delete</th> -->
                         <th>Disable/Enable</th>
                     </tr>
                 </thead>
@@ -126,10 +126,10 @@ if (!isset($_SESSION["adminlogin"]) || $_SESSION["adminlogin"] == "adlogout") {
                                                                                 ?>">
                             <i class="fa-solid fa-pen-to-square"></i></a>
                             </td> -->
-                            <td>
-                                <a onclick="return checkdel()" href="up-ins-del/userdelete.php?uid=<?php echo $rec['id']; ?>">
+                            <!-- <td>
+                                <a onclick="return checkdel()" href="up-ins-del/userdelete.php?uid=<?php //echo $rec['id']; ?>">
                                     <i class="fa-regular fa-trash-can"></i></a>
-                            </td>
+                            </td> -->
                             <td>
                                 <a href="up-ins-del/dis-enb.php?uid=<?php echo $rec['id'] ?>">
                                     <button type="submit" class="btn btn-<?php if ($rec['status'] == 1) {
