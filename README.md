@@ -9,12 +9,13 @@ categories, and orders
 language used - PHP, Javascript, HTML, CSS, 
 and Bootstrap, MySQL.
 
+
+
 ✔ We have made this website as responsive website so, customers can
 easily access our website from any device.
 
 
 It is completely responsive website, to provide smooth experience...😀
-
 If you like my project, give it a star 😁😁😁
 
 
