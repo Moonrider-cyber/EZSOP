@@ -2,8 +2,12 @@
 
 Live at :- https://ezsop99.000webhostapp.com/
 
-Our ecommerce website, where customers can order products and admin can manage inventory, categories, and orders
-- PHP, Javascript, HTML, CSS, and Bootstrap, MySQL.
+Our ecommerce website, where customers can order 
+products and admin can manage inventory, 
+categories, and orders
+
+language used - PHP, Javascript, HTML, CSS, 
+and Bootstrap, MySQL.
 
 ✔ We have made this website as responsive website so, customers can
 easily access our website from any device.
