@@ -1,6 +1,18 @@
-# Dynamic Ecommerce Website
+# EZSOP (Dynamic Ecommerce Website)
 
-An e-commerce project in which the admin may manage products and consumers can login/register and buy products. - MySQL, PHP, Javascript, HTML, CSS, and Bootstrap.
+Live at :- https://ezsop99.000webhostapp.com/
+
+Our ecommerce website, where customers can order products and admin can manage inventory, categories, and orders
+- PHP, Javascript, HTML, CSS, and Bootstrap, MySQL.
+
+✔ We have made this website as responsive website so, customers can
+easily access our website from any device.
+
+
+It is completely responsive website, to provide smooth experience...😀
+
+If you like my project, give it a star 😁😁😁
+
 
 # Here some screenshots
 
