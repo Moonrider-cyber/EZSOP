@@ -3,6 +3,8 @@
     if(isset($_SESSION["login"])){
         $name = $_SESSION["username"];
     }
+    //8.1.6
+    //7.2.31
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,18 +56,20 @@
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">
-                            <img src="img/slider1.png" />
-                            bb
+                            <img src="img/slider4.jpg" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/slider2.png" />
+                            <img src="img/slider5.png" />
                         </div>
                         <div class="swiper-slide">
                             <img src="img/slider3.png" />
                         </div>
                         <!-- <div class="swiper-slide">
-                        <img src="img/bac.png" />
-                    </div> -->
+                            <img src="img/slider2.png" />
+                        </div> -->
+                        <div class="swiper-slide">
+                            <img src="img/slider1.png" />
+                        </div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -155,7 +159,7 @@
             <div class="bigcontainer">
                 <div class="products-cards">
                     <div class="hading">
-                        <h1>Best Sellers</h1>
+                        <h1>Latest Product</h1>
                         <hr>
                     </div>
                     <div class="cards-group">
@@ -169,7 +173,10 @@
                             
                             <div class="card"> 
                             <div class="card-fav">
-                                <button><i class="far fa-heart"></i></button>
+                                <button class="card-fav-btn" >
+                                    <!-- <i class="fa-solid fa-heart"></i>    -->
+                                    <i class="far fa-heart"></i>
+                                </button>
                             </div> 
                             <a href="product-info.php?productid=<?php echo $rows["pid"]; ?>">
                             <div class="card-img">
@@ -203,6 +210,55 @@
                 </div>
             </div>
         </section>
+
+                        <!-- start features Area -->
+	<section class="features-area section_gap">
+		<div class="container">
+			<div class="row features-inner">
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="img/features/f-icon1.png" alt="">
+						</div>
+						<h6>Free Delivery</h6>
+						<p>Free Shipping on all order</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="img/features/f-icon2.png" alt="">
+						</div>
+						<h6>Return Policy</h6>
+						<p>Free Shipping on all order</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="img/features/f-icon3.png" alt="">
+						</div>
+						<h6>24/7 Support</h6>
+						<p>Free Shipping on all order</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="img/features/f-icon4.png" alt="">
+						</div>
+						<h6>Secure Payment</h6>
+						<p>Free Shipping on all order</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end features Area -->
 
         <?php include "componet/footer.php"; ?>
     </div>

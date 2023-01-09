@@ -89,7 +89,7 @@ for (var i = 0; i < disprice.length; i++) {
   getmainprice = parseInt(mainprice[i].textContent.replace("₹",""));
   savemoney = getmainprice - getdisprice;
   findper =  Math.round(savemoney * 100 / getmainprice);
-  console.log(findper);
+  // console.log(findper);
   disper[i].textContent =  (findper+"% off")
 }
 

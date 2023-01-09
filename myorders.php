@@ -76,6 +76,8 @@
                             <th>Date</th>
                             <th>Status</th>
                             <th>Product</th>
+                            <th>Price</th>
+                            <th>Qty</th>
                             <th>Total</th>
                             <th>Action</th>
                         </tr>
@@ -94,10 +96,15 @@
                             $excfindprod = $con->query($findprod);
                             $prod = mysqli_fetch_assoc($excfindprod);
                             ?>
-                            <td><?php echo $prod['pname']; ?></td>
+                            <td><a href="product-info.php?productid=<?php echo $rec["pid"] ?>"><?php echo $prod['pname']; ?></a></td>
                             <td><?php echo $prod['dis-price']; ?></td>
-                            <td><a href="product-info.php?productid=<?php echo $rec["pid"] ?>">
-                                <button onclick="shopnowclick()">view</button>
+                            <td><?php echo $rec['qty']; ?></td>
+                            <td><?php echo ($prod['dis-price'] * $rec['qty']) ?></td>
+                            <!-- <td><a href="product-info.php?productid=<?php //echo $rec["pid"] ?>">
+                                <button>view</button>
+                                </a></td> -->
+                            <td><a href="invoice.php?oid=<?php echo $rec["oid"] ?>">
+                                <button>Invoice</button>
                                 </a></td>
                         </tr>
                         <?php } } ?>
@@ -115,6 +122,11 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     
     <script src="index.js"></script>
+    <script>
+        function invoiceclick(){
+
+        }
+    </script>
 </body>
 
 </html>

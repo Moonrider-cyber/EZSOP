@@ -55,15 +55,15 @@ if(isset($_REQUEST['subcategory'])){
 
     <div class="main-body">
         <!-- page navigator -->
-        <div class="page-navigator">
+        <!-- <div class="page-navigator">
             <div class="bigcontainer">
                 <div class="page-names">
                     <a href="index.php">Home</a>
                     <span>></span>
-                    <p><?php echo $cname ?></p>
+                    <p><?php //echo $cname ?></p>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- page navigator -->
 
         <!--shopall items -->

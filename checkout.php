@@ -58,6 +58,7 @@ include_once("componet/conn.php");
             <div class="address-details">
               <p><?php echo $rec["name"] ?></p>
               <p><?php echo $rec["address"] ?></p>
+              <p><?php echo $rec["number"] ?></p>
               <p><?php echo $rec["city"]."     ,     ". $rec["state"] ?></p>
               <p><?php echo $rec["zip"] ?></p>
             </div>
@@ -105,7 +106,7 @@ include_once("componet/conn.php");
                 </div>
                 <div class="form-group col-md-2">
                   <label for="inputZip">Zip</label>
-                  <input type="number" class="form-control" id="inputZip" placeholder="Enter Zip" name="zip" requiredd>
+                  <input type="number" class="form-control"  placeholder="Enter Zip" name="zip" required>
                 </div>
               </div>
               
@@ -123,8 +124,6 @@ include_once("componet/conn.php");
 <?php
   if(isset($_REQUEST["placeorder"])){
     $number = $_REQUEST["number"];
-
-    
     $name = $_REQUEST["name"];
     $address = $_REQUEST["address"];
     $city = $_REQUEST["city"];

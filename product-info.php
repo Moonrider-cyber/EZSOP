@@ -11,6 +11,7 @@
     }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,10 +66,10 @@
                 </div>
                 <div class="product-into-qtybtn">
                     <label for="qty">Quantity:</label>
-                    <input type="number" value="1">
+                    <input type="number" value="1" name="pqty">
                 </div>
                 <div class="product-info-btn">
-                    <button>Add To Cart</button>
+                    <button name="addcart">Add To Cart</button>
                     <button><i class="far fa-heart"></i></button>
                 </div>
                 <div class="product-info-buy-now">
@@ -121,7 +122,7 @@
                     </div>
                 </div>
             </div>
-                <?php
+                <?php 
             }
         ?>
 

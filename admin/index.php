@@ -10,7 +10,6 @@ $sq1 = "SELECT * FROM users";
 $sq1exc = mysqli_query($con, $sq1);
 $totaluser = mysqli_num_rows($sq1exc);
 
-
 $sq2 = "SELECT * FROM products";
 $sq2exc = mysqli_query($con, $sq2);
 $totalitems = mysqli_num_rows($sq2exc);
@@ -22,6 +21,10 @@ $totalcat = mysqli_num_rows($sq3exc);
 $sq4 = "SELECT * FROM `sub-catagory`";
 $sq4exc = mysqli_query($con, $sq4);
 $totalsubcat = mysqli_num_rows($sq4exc);
+
+$sq5 = "SELECT * FROM orders";
+$sq2exc = mysqli_query($con, $sq5);
+$totalorder = mysqli_num_rows($sq2exc);
 ?>
 <html>
 
@@ -54,7 +57,8 @@ $totalsubcat = mysqli_num_rows($sq4exc);
                         <a href="user.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a>
                         <a href="products.php" class="nav_link"> <i class="fa-solid fa-box-open"></i> <span class="nav_name">Products</span> </a>
                         <a href="category.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Catagory</span> </a>
-                        <a href="sub-category.php" class="nav_link"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>  <a href="orders.php" class="nav_link"> <i class="fa-solid fa-boxes-stacked"></i> <span class="nav_name">Orders</span> </a>
+                        <a href="sub-category.php" class="nav_link"> <i class="fa-solid fa-tag"></i> <span class="nav_name">Sub-Category</span> </a>  
+                        <a href="orders.php" class="nav_link"> <i class="fa-solid fa-boxes-stacked"></i> <span class="nav_name">Orders</span> </a>
                         
                     </div>
                 </div> 
@@ -89,6 +93,18 @@ $totalsubcat = mysqli_num_rows($sq4exc);
                         <ul>
                             <li class="dash-label">Total Products</li>
                             <li class="dash-data"><?php echo $totalitems; ?></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="dash-card">
+                    <div class="dash-icons">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+                    <div class="dash-desc">
+                        <ul>
+                            <li class="dash-label">Total Orders</li>
+                            <li class="dash-data"><?php echo $totalorder; ?></li>
                         </ul>
                     </div>
                 </div>

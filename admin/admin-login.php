@@ -2,40 +2,95 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Acme&family=Barlow:wght@500&family=Quicksand:wght@500&family=
-        Raleway:wght@300&family=Ubuntu:wght@700&display=swap"rel="stylesheet">
-    <!-- fonts -->
-    <!-- links -->
-    <link rel="stylesheet" href="../style-login-sign.css">
-    <link rel="stylesheet" href="../style-res.css">
-    <title>EZSOP - Admin login</title>
+    <link rel="stylesheet" href="../loginsignup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <style>
+        .form{
+            margin: 0 27%;
+        }
+        .section .container .right-side .forms input{
+            background-color: white;
+            border: none;
+            border-bottom: 1px black solid;
+            padding-left: 60px;
+            width: 80%;
+        }
+        .section .container .right-side .forms input:focus {
+            border: none;
+            border-bottom: 1px black solid;
+        }
+        .section .container .right-side .forms input[type="submit"]{
+            margin-top: 30px;
+            width: 95%;
+            padding: 0px;
+        }
+        .form-inputs i{
+            left: 15px;
+            right: unset;
+        }
+    </style>
+    <title>EZSOP - Admin Login</title>
 </head>
-
 <body>
-    <div class="form">
-        <div class="login-form">
-            <strong>ADMIN LOG IN</strong>
-            <form>
-                <input type="email" placeholder="Enter email" name="email" required>
-                <input type="password" placeholder="password" name="pwd" maxlength="15" required>
-                <input type="submit" value="Log In" name="loginbtn">
-            </form>
-            
+    <div class="section">
+        <div class="container">
+            <div class="form">
+                <!-- <div class="left-side">
+                    <div class="content">
+                        <h1>EZSOP</h1>
+                        <h5>Welcome Back</h5>
+                        
+                            <img src="../img/loginbg.png" width="300">
+                    </div>
+                    <div class="social">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                        <ul class="terms">
+                            <li><a href="#">Terms</a></li>
+                            <li><span class="dots"></span></li>
+                            <li><a href="#">Services</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+                <div class="right-side">
+                    <form action="admin-login.php" method="post">
+                        <div class="forms">
+                            <h1 class="forms-heading">Admin Login</h1>
+                            <!-- <div class="form-inputs"> <i class="fa fa-user"></i> <input type="text" placeholder="User name"> 
+                            </div> -->
+                            <div class="form-inputs">
+                                <i class="fa fa-envelope"></i> 
+                                <input type="email" placeholder="Email" autocomplete='chrome-off' name="email" required>
+                            </div>
+                            <div class="form-inputs"> 
+                                <i class="fa fa-eye" id="password_eye"></i>
+                                <input class="password-input"  type="password" placeholder="Password" name="pwd" maxlength="30" required>
+                            </div>
+
+                            <div class="submit-button"> 
+                                <input type="submit" value="Login" name="adminloginbtn"> 
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </body>
-</html>
+</html> 
+
 <?php
-    if(isset($_REQUEST["loginbtn"])){
+    if(isset($_REQUEST["adminloginbtn"])){
         $email = $_REQUEST["email"];
         $pwd = $_REQUEST["pwd"];
         

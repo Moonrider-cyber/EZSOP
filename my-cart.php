@@ -134,7 +134,7 @@
                     </div>
                     <div class="product-prices">
                         <p>Shipping Charge</p>
-                        <p class="shiping-charge">₹100</p>
+                        <p class="shiping-charge">FREE</p>
                     </div>
                     <div class="product-prices">
                         <p>The total amount</p>
@@ -198,7 +198,7 @@
                 
                 sum = sum + (intallprice * intallqty);
 
-                totalprice.textContent ="₹" + (sum + 50);
+                totalprice.textContent ="₹" + (sum );
             }
             
         displaysum.textContent = sum;

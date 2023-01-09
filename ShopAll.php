@@ -37,7 +37,7 @@
 <?php include("componet/navbar.php"); ?>
     <div class="main-body">
         <!-- page navigator -->
-        <div class="page-navigator">
+        <!-- <div class="page-navigator">
             <div class="bigcontainer">
                 <div class="page-names">
                     <a href="index.php">Home</a>
@@ -45,7 +45,7 @@
                     <p>Shop All</p>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- page navigator -->
 
         <!--shopall items -->
@@ -58,8 +58,15 @@
                             <hr>
                         </div>
                         <!-- <div class="product-filter">
-
-                    </div> -->
+                            <div>
+                                <select name="filter" id="#fetchval">
+                                    <option value="">Sort By</option>
+                                    <option value="new">Newest</option>
+                                    <option value="pricelh">Price (Low To High)</option>
+                                    <option value="pricehl">Price (High To Low)</option>
+                                </select>
+                            </div>
+                        </div> -->
                         <div class="cards-group">
 
                         <?php
@@ -94,7 +101,7 @@
                                 </div>
                             </div>    
                             <?php }
-                        ?>
+                        ?>  
  
 
                         </div>
@@ -112,6 +119,11 @@
     <!-- javascript sw -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="index.js"></script>
+
+    
 </body>
  
 </html>
+
+
+

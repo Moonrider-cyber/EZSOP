@@ -49,15 +49,15 @@ if(isset($_REQUEST['search']) && !$_REQUEST['search'] == ""){
 
     <div class="main-body">
         <!-- page navigator -->
-        <div class="page-navigator">
+        <!-- <div class="page-navigator">
             <div class="bigcontainer">
                 <div class="page-names">
                     <a href="index.php">Home</a>
                     <span>></span>
-                    <p>search result of <?php echo $searchstr ?></p>
+                    <p>search result of <?php //echo $searchstr ?></p>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- page navigator -->
 
         <!--shopall items -->

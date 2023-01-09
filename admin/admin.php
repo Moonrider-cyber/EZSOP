@@ -1,5 +1,4 @@
 <?php include "../componet/conn.php"; ?>
-<?php include_once "../componet/func.php"; ?>
 <?php
 session_start();
 if (!isset($_SESSION["adminlogin"]) || $_SESSION["adminlogin"] == "adlogout") {

@@ -12,7 +12,7 @@
   --blue: blue;
   --white : white;
   --black : black;
-  --red : red;
+  --red : rgb(215, 45, 45);
 }
 * {
   margin: 0;
@@ -481,10 +481,10 @@ color: var(--white);
   border-radius: 27px;
   box-shadow: 0px 0px 5px rgb(135, 135, 135);
 }
-.products-cards .cards-group .card:hover{
+.products-cards .cards-group .card:hover img{
   transition: .2s ease-in all;
-  transform: translateY(-5px);
-  /* transform: scale(1.04); */
+  /* transform: translateY(-5px); */
+  transform: scale(1.09);
 }
 .products-cards .cards-group .card .card-fav{
   /* display: flex;
@@ -520,6 +520,7 @@ color: var(--white);
 .products-cards .cards-group  .card .card-text{
   border-top: 1px solid rgb(225, 225, 225);
   text-align: center;
+  margin-top: 5px;
 }
 .products-cards .cards-group  .card .card-text-title{
   padding: 8px;
@@ -583,7 +584,7 @@ color: var(--white);
 }
 
 .products-cards .card .card-text .card-text-cart button{
-  border: 1px solid red;
+  border: 1px solid var(--red);
   background-color: white;
   padding: 7px 25px;
   font-size: 14px;
@@ -591,11 +592,108 @@ color: var(--white);
   cursor: pointer;
 }
 .products-cards .card .card-text .card-text-cart button:hover{
-  background-color: red;
+  background-color: var(--red);
   transition: .3s ease-in-out;
   color: var(--white);
 }
 /* product card */
+
+/* features */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+      width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+      width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+      width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+      width: 1140px;
+  }
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.col-3 {
+  width: 25%;}
+
+.col-6 {
+  width: 50%;}
+
+.col-lg-3,col-md-6,col-sm-6{
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+  * {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .row div {
+    padding: 1.5%;  
+  }    
+} 
+
+@media (min-width:992px) {
+  .col-lg-3 {
+      max-width: 25%;
+      width: 25%;
+  }
+}
+.features-area{
+  margin-top: 44px;
+}
+.features-area h6{
+  font-family: var(--lightfont1);
+}
+.features-area p{
+  font-family: var(--midfont);
+  padding-top: 3px;
+  font-weight: lighter;
+}
+/* features */
+
 
 /* footer */
 footer{
@@ -648,40 +746,20 @@ footer .content .top{
   
 }
 .top .media-icons a:nth-child(1){
-  background: #4267B2;
+  color: #4267B2;
 
 }
-.top .media-icons a:nth-child(1):hover{
-  color: #4267B2;
-  background: var(--white);
-}
 .top .media-icons a:nth-child(2){
-  background: #1DA1F2;
-}
-.top .media-icons a:nth-child(2):hover{
   color: #1DA1F2;
-  background: var(--white);
 }
 .top .media-icons a:nth-child(3){
-  background: #E1306C;
-}
-.top .media-icons a:nth-child(3):hover{
   color: #E1306C;
-  background: var(--white);
 }
 .top .media-icons a:nth-child(4){
-  background: #0077B5;
-}
-.top .media-icons a:nth-child(4):hover{
   color: #0077B5;
-  background: var(--white);
 }
 .top .media-icons a:nth-child(5){
-  background: #FF0000;
-}
-.top .media-icons a:nth-child(5):hover{
-  color: #FF0000;
-  background: var(--white);
+  color: red;
 }
 .content .top .media-icons a i{
   padding: 7px 6px;
@@ -1308,10 +1386,14 @@ footer .bottom-details .bottom_text{
   font-family: var(--lightfont1);
 }
 .myorder-table tbody tr td{
-  padding: 5px 50px;
+  padding: 5px 25px;
   font-size: 17px;
   font-family: var(--midfont);
   border-top: 1px solid rgb(172, 170, 170);
+}
+.myorder-table tbody tr td a:hover{
+  color: rgb(38, 38, 253);
+  text-decoration: underline;
 }
 .myorder-table tbody button{
   background-color: blue;
@@ -1319,9 +1401,13 @@ footer .bottom-details .bottom_text{
   border: none;
   margin: 10px;
   padding: 5px 4px;
-  font-size: 17px;
-  width: 60px;
+  font-size: 15px;
+  width: 77px;
   border-radius: 3px;
   cursor: pointer;
+}
+.myorder-table tbody button:hover{
+  background-color: black;
+  transition: .3s ease background-color;
 }
 /* my orders */
