@@ -10,7 +10,6 @@ If you like my project, give it a star 😁😁😁
 
 ---
 
-# Here some screenshots
 # Here some screenshots:
 
 ![ezsop99](https://user-images.githubusercontent.com/81921291/209457912-21757110-e88f-42e3-9d92-bfc35a3a1251.png)
