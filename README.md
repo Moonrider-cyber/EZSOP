@@ -3,8 +3,7 @@ Live at :- https://ezsop99.000webhostapp.com/
 ---
 Our ecommerce website, where customers can order 
 products and admin can manage inventory, 
-categories, and orders
-@@ -18,8 +19,9 @@ easily access our website from any device.
+categories, and orders easily access our website from any device.
 It is completely responsive website, to provide smooth experience...😀
 If you like my project, give it a star 😁😁😁
 
