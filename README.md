@@ -26,7 +26,7 @@ To access the project repository, please follow the link below:
 
 This project has been an exciting experience for me, as it provided the opportunity to learn more about web development and the technologies involved. I hope that this project will be of use to you, and I look forward to hearing your feedback.
 
-Written by Chatsonic
+
 It is completely responsive website, to provide smooth experience...😀
 If you like my project, give it a star 😁😁😁
 
