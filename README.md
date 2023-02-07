@@ -1,5 +1,7 @@
 # 💻 EZSOP - Your One-Stop Shop for Electronics
 
+![websiteshowcase](https://user-images.githubusercontent.com/81921291/217268286-4e1efc2b-a9a0-40e5-b77f-b70c7fc84643.png)
+
 An e-commerce website where users can easily purchase their favorite electronic products. 
 
 ## 🛍️ Features for Users
@@ -32,7 +34,3 @@ It is completely responsive website, to provide smooth experience...😀
 If you like my project, give it a star 😁😁😁
 
 ---
-
-# Here some screenshots:
-
-![ezsop99](https://user-images.githubusercontent.com/81921291/209457912-21757110-e88f-42e3-9d92-bfc35a3a1251.png)
