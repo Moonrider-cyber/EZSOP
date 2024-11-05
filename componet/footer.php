@@ -48,7 +48,7 @@
                     </ul>
                     <ul class="box">
                         <li class="link_name">Developer</li>
-                        <li>Patel Jainex</li>
+                        <li>Tanner Remstedt</li>
                         <li>Parmar Rohit</li>
                         <li>Makadiya Parth</li>
                         <li>Vaghani Tirth</li>

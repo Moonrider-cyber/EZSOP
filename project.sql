@@ -230,7 +230,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `password`, `email`, `status`) VALUES
 (44, 'test', '$2y$10$Eja4miWmAXJSvLEq6ZmDv.HBOnMhKSJODl1ny6FMsphNtjlAySjO6', 'test@test', 0),
 (49, 'test1', '$2y$10$18cTvpK8OM.H63zIqvGvh.rxRPj/RJ7rgnddJfI4l63jXH62sI60W', 'test@test1', 0),
-(53, 'jainex', '$2y$10$PcgJcnHEsZklrtS41LUdXeTVoa/fei6bMNHjk5YYKsi3FEZP7JqIm', 'jainexp017@gmail.com', 0),
+(53, 'Tanner', '$2y$10$PcgJcnHEsZklrtS41LUdXeTVoa/fei6bMNHjk5YYKsi3FEZP7JqIm', 'tanner.remstedt@outlook.com', 0),
 (56, 'luffy', '$2y$10$ARb0uU5So.eIgIgTt0d7ce0UITGcd2ibEA3HIo.LCaxSkEe4qegEC', 'luffy@gmail.com', 0),
 (57, 'makima', '$2y$10$Cq4YdLOVcuPby5.GA1AkTuhQsXOlqFnw25SpwDHfp.8hBP2Dr8zzq', 'makima@gmail.com', 0);
 
